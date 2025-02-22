@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huella de carbono</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="bg-primary text-white text-center py-5">
+        <h1>Huella de carbono</h1>
+        <p class="lead">Esta es una simple aplicación para calcular y entender tu huella de carbono.</p>
+    </header>
+    <main class="container mt-5">
+        <h2>Sobre este proyecto</h2>
+        <p>Este proyecto muestra cómo usar Bootstrap para diseño responsivo y estilos personalizados, enfocado en la huella de carbono.</p>
+        
+        <form>
+            <div class="form-group">
+                <label for="energiaElectrica">Consumo de energía eléctrica</label>
+                <input type="text" class="form-control" id="energiaElectrica" placeholder="Ingrese el consumo de energía eléctrica" oninput="validarNumero(this)">
+            </div>
+            <div class="form-group">
+                <label for="factorEmision">Factor de emisión</label>
+                <input type="text" class="form-control" id="factorEmision" placeholder="Ingrese el factor de emisión" oninput="validarNumero(this)">
+            </div>
+            <button type="button" class="btn btn-primary" onclick="calcularHuella()">Calcular Huella de Carbono</button>
+        </form>
+        <div class="mt-3">
+            <p id="resultado"></p>
+        </div>
+    </main>
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2023 My HTML5 Bootstrap Project</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>
+        function validarNumero(input) {
+            input.value = input.value.replace(/[^0-9.]/g, '');
+        }
+
+        function calcularHuella() {
+            var energiaElectrica = parseFloat(document.getElementById('energiaElectrica').value);
+            var factorEmision = parseFloat(document.getElementById('factorEmision').value);
+            if (isNaN(energiaElectrica) || isNaN(factorEmision)) {
+                document.getElementById('resultado').innerText = 'Por favor, ingrese valores válidos.';
+                return;
+            }
+            var resultado = energiaElectrica * factorEmision;
+            document.getElementById('resultado').innerText = 'Huella de Carbono: ' + resultado + ' kg CO2';
+        }
+    </script>
+</body>
+</html>

@@ -16,41 +16,74 @@
         <h2>Sobre este proyecto</h2>
         <p>Este proyecto muestra cómo usar Bootstrap para diseño responsivo y estilos personalizados, enfocado en la huella de carbono.</p>
         
-        <form>
-            <div class="form-group">
-                <label for="personasCasa">Cuántas personas viven en tu casa</label>
-                <input type="text" class="form-control" id="personasCasa" placeholder="Ingrese el número de personas" oninput="validarNumero(this)">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="form-group">
+                        <label for="personasCasa">Cuántas personas viven en tu casa</label>
+                        <input type="text" class="form-control" id="personasCasa" placeholder="Ingrese el número de personas" oninput="validarNumero(this)">
+                    </div>
+                    <button class="btn btn-primary" onclick="$('#carouselExampleIndicators').carousel('next')">Next</button>
+                </div>
+                <div class="carousel-item">
+                    <div class="form-group">
+                        <label for="energiaElectrica">Cuánto pagas al mes por el servicio de energía eléctrica?</label>
+                        <input type="text" class="form-control" id="energiaElectrica" placeholder="Ingrese el monto" oninput="validarNumero(this)">
+                    </div>
+                    <button class="btn btn-secondary" onclick="$('#carouselExampleIndicators').carousel('prev')">Previous</button>
+                    <button class="btn btn-primary" onclick="$('#carouselExampleIndicators').carousel('next')">Next</button>
+                </div>
+                <div class="carousel-item">
+                    <div class="form-group">
+                        <label for="aguaPotable">Cuánto pagas al mes por el servicio de agua potable?</label>
+                        <input type="text" class="form-control" id="aguaPotable" placeholder="Ingrese el monto" oninput="validarNumero(this)">
+                    </div>
+                    <button class="btn btn-secondary" onclick="$('#carouselExampleIndicators').carousel('prev')">Previous</button>
+                    <button class="btn btn-primary" onclick="$('#carouselExampleIndicators').carousel('next')">Next</button>
+                </div>
+                <div class="carousel-item">
+                    <div class="form-group">
+                        <label for="gasNatural">Cuánto pagas al mes por el servicio de gas natural?</label>
+                        <input type="text" class="form-control" id="gasNatural" placeholder="Ingrese el monto" oninput="validarNumero(this)">
+                    </div>
+                    <button class="btn btn-secondary" onclick="$('#carouselExampleIndicators').carousel('prev')">Previous</button>
+                    <button class="btn btn-primary" onclick="$('#carouselExampleIndicators').carousel('next')">Next</button>
+                </div>
+                <div class="carousel-item">
+                    <div class="form-group">
+                        <label for="combustible">Cuánto pagas a la semana por el consumo de combustible en tu automóvil?</label>
+                        <input type="text" class="form-control" id="combustible" placeholder="Ingrese el monto" oninput="validarNumero(this)">
+                    </div>
+                    <button class="btn btn-secondary" onclick="$('#carouselExampleIndicators').carousel('prev')">Previous</button>
+                    <button class="btn btn-primary" onclick="$('#carouselExampleIndicators').carousel('next')">Next</button>
+                </div>
+                <div class="carousel-item">
+                    <div class="form-group">
+                        <label for="transportePublico">Cuántas veces a la semana utilizas el transporte público?</label>
+                        <input type="text" class="form-control" id="transportePublico" placeholder="Ingrese el número de veces" oninput="validarNumero(this)">
+                    </div>
+                    <button class="btn btn-secondary" onclick="$('#carouselExampleIndicators').carousel('prev')">Previous</button>
+                    <button class="btn btn-primary" onclick="$('#carouselExampleIndicators').carousel('next')">Next</button>
+                </div>
+                <div class="carousel-item">
+                    <div class="form-group">
+                        <label for="viajesNacionales">Cuántas veces al año viajas en avión a destinos nacionales?</label>
+                        <input type="text" class="form-control" id="viajesNacionales" placeholder="Ingrese el número de veces" oninput="validarNumero(this)">
+                    </div>
+                    <button class="btn btn-secondary" onclick="$('#carouselExampleIndicators').carousel('prev')">Previous</button>
+                    <button class="btn btn-primary" onclick="$('#carouselExampleIndicators').carousel('next')">Next</button>
+                </div>
+                <div class="carousel-item">
+                    <div class="form-group">
+                        <label for="viajesInternacionales">Cuántas veces al año viajas en avión a destinos internacionales?</label>
+                        <input type="text" class="form-control" id="viajesInternacionales" placeholder="Ingrese el número de veces" oninput="validarNumero(this)">
+                    </div>
+                    <button class="btn btn-secondary" onclick="$('#carouselExampleIndicators').carousel('prev')">Previous</button>
+                    <button class="btn btn-primary" onclick="$('#carouselExampleIndicators').carousel('next')">Next</button>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="energiaElectrica">Cuánto pagas al mes por el servicio de energía eléctrica?</label>
-                <input type="text" class="form-control" id="energiaElectrica" placeholder="Ingrese el monto" oninput="validarNumero(this)">
-            </div>
-            <div class="form-group">
-                <label for="aguaPotable">Cuánto pagas al mes por el servicio de agua potable?</label>
-                <input type="text" class="form-control" id="aguaPotable" placeholder="Ingrese el monto" oninput="validarNumero(this)">
-            </div>
-            <div class="form-group">
-                <label for="gasNatural">Cuánto pagas al mes por el servicio de gas natural?</label>
-                <input type="text" class="form-control" id="gasNatural" placeholder="Ingrese el monto" oninput="validarNumero(this)">
-            </div>
-            <div class="form-group">
-                <label for="combustible">Cuánto pagas a la semana por el consumo de combustible en tu automóvil?</label>
-                <input type="text" class="form-control" id="combustible" placeholder="Ingrese el monto" oninput="validarNumero(this)">
-            </div>
-            <div class="form-group">
-                <label for="transportePublico">Cuántas veces a la semana utilizas el transporte público?</label>
-                <input type="text" class="form-control" id="transportePublico" placeholder="Ingrese el número de veces" oninput="validarNumero(this)">
-            </div>
-            <div class="form-group">
-                <label for="viajesNacionales">Cuántas veces al año viajas en avión a destinos nacionales?</label>
-                <input type="text" class="form-control" id="viajesNacionales" placeholder="Ingrese el número de veces" oninput="validarNumero(this)">
-            </div>
-            <div class="form-group">
-                <label for="viajesInternacionales">Cuántas veces al año viajas en avión a destinos internacionales?</label>
-                <input type="text" class="form-control" id="viajesInternacionales" placeholder="Ingrese el número de veces" oninput="validarNumero(this)">
-            </div>
-            <button type="button" class="btn btn-primary" onclick="calcularHuella()">Calcular Huella de Carbono</button>
-        </form>
+        </div>
+        <button type="button" class="btn btn-primary mt-3" onclick="calcularHuella()">Calcular Huella de Carbono</button>
         <div class="mt-3">
             <p id="resultado"></p>
         </div>
@@ -68,7 +101,25 @@
             input.value = input.value.replace(/[^0-9.]/g, '');
         }
 
-      
+        function calcularHuella() {
+            var personasCasa = parseFloat(document.getElementById('personasCasa').value);
+            var energiaElectrica = parseFloat(document.getElementById('energiaElectrica').value);
+            var aguaPotable = parseFloat(document.getElementById('aguaPotable').value);
+            var gasNatural = parseFloat(document.getElementById('gasNatural').value);
+            var combustible = parseFloat(document.getElementById('combustible').value);
+            var transportePublico = parseFloat(document.getElementById('transportePublico').value);
+            var viajesNacionales = parseFloat(document.getElementById('viajesNacionales').value);
+            var viajesInternacionales = parseFloat(document.getElementById('viajesInternacionales').value);
+
+            if (isNaN(personasCasa) || isNaN(energiaElectrica) || isNaN(aguaPotable) || isNaN(gasNatural) || isNaN(combustible) || isNaN(transportePublico) || isNaN(viajesNacionales) || isNaN(viajesInternacionales)) {
+                document.getElementById('resultado').innerText = 'Por favor, ingrese valores válidos.';
+                return;
+            }
+
+            var resultado = (personasCasa + energiaElectrica + aguaPotable + gasNatural + combustible + transportePublico + viajesNacionales + viajesInternacionales) * 100; // Example calculation
+            document.getElementById('resultado').innerText = 'Huella de Carbono: ' + resultado + ' kg CO2';
+            lanzarConfetti();
+        }
 
         function lanzarConfetti() {
             confetti({
@@ -77,6 +128,13 @@
                 origin: { y: 0.6 }
             });
         }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                $('#carouselExampleIndicators').carousel('next');
+            }
+        });
     </script>
 </body>
 </html>

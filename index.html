@@ -18,12 +18,36 @@
         
         <form>
             <div class="form-group">
-                <label for="energiaElectrica">Consumo de energía eléctrica</label>
-                <input type="text" class="form-control" id="energiaElectrica" placeholder="Ingrese el consumo de energía eléctrica" oninput="validarNumero(this)">
+                <label for="personasCasa">Cuántas personas viven en tu casa</label>
+                <input type="text" class="form-control" id="personasCasa" placeholder="Ingrese el número de personas" oninput="validarNumero(this)">
             </div>
             <div class="form-group">
-                <label for="factorEmision">Factor de emisión</label>
-                <input type="text" class="form-control" id="factorEmision" placeholder="Ingrese el factor de emisión" oninput="validarNumero(this)">
+                <label for="energiaElectrica">Cuánto pagas al mes por el servicio de energía eléctrica?</label>
+                <input type="text" class="form-control" id="energiaElectrica" placeholder="Ingrese el monto" oninput="validarNumero(this)">
+            </div>
+            <div class="form-group">
+                <label for="aguaPotable">Cuánto pagas al mes por el servicio de agua potable?</label>
+                <input type="text" class="form-control" id="aguaPotable" placeholder="Ingrese el monto" oninput="validarNumero(this)">
+            </div>
+            <div class="form-group">
+                <label for="gasNatural">Cuánto pagas al mes por el servicio de gas natural?</label>
+                <input type="text" class="form-control" id="gasNatural" placeholder="Ingrese el monto" oninput="validarNumero(this)">
+            </div>
+            <div class="form-group">
+                <label for="combustible">Cuánto pagas a la semana por el consumo de combustible en tu automóvil?</label>
+                <input type="text" class="form-control" id="combustible" placeholder="Ingrese el monto" oninput="validarNumero(this)">
+            </div>
+            <div class="form-group">
+                <label for="transportePublico">Cuántas veces a la semana utilizas el transporte público?</label>
+                <input type="text" class="form-control" id="transportePublico" placeholder="Ingrese el número de veces" oninput="validarNumero(this)">
+            </div>
+            <div class="form-group">
+                <label for="viajesNacionales">Cuántas veces al año viajas en avión a destinos nacionales?</label>
+                <input type="text" class="form-control" id="viajesNacionales" placeholder="Ingrese el número de veces" oninput="validarNumero(this)">
+            </div>
+            <div class="form-group">
+                <label for="viajesInternacionales">Cuántas veces al año viajas en avión a destinos internacionales?</label>
+                <input type="text" class="form-control" id="viajesInternacionales" placeholder="Ingrese el número de veces" oninput="validarNumero(this)">
             </div>
             <button type="button" class="btn btn-primary" onclick="calcularHuella()">Calcular Huella de Carbono</button>
         </form>
@@ -44,17 +68,7 @@
             input.value = input.value.replace(/[^0-9.]/g, '');
         }
 
-        function calcularHuella() {
-            var energiaElectrica = parseFloat(document.getElementById('energiaElectrica').value);
-            var factorEmision = parseFloat(document.getElementById('factorEmision').value);
-            if (isNaN(energiaElectrica) || isNaN(factorEmision)) {
-                document.getElementById('resultado').innerText = 'Por favor, ingrese valores válidos.';
-                return;
-            }
-            var resultado = energiaElectrica * factorEmision;
-            document.getElementById('resultado').innerText = 'Huella de Carbono: ' + resultado + ' kg CO2';
-            lanzarConfetti();
-        }
+      
 
         function lanzarConfetti() {
             confetti({
